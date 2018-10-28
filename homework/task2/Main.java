@@ -88,17 +88,17 @@ public class Main {
         System.out.println("His degree is = " + myPolynomial4.getDegree());    // --> His degree is = 0
 
 //-------------------------------------test ADDING--------------------------------------------------------------------
-        System.out.println("---------add---------");
-        System.out.print("\n" + myPolynomial.toString() + "__+__" + myPolynomial1.toString() + " = ");
+        System.out.println("\n---------add---------");
+        System.out.print("\n(" + myPolynomial.toString() + ") + (" + myPolynomial1.toString() + ") = ");
         System.out.println(myPolynomial.add(myPolynomial1).toString());
 
-        System.out.print("\n" + myPolynomial.toString() + "__+__" + myPolynomial2.toString() + " = ");
+        System.out.print("\n(" + myPolynomial.toString() + ") + (" + myPolynomial2.toString() + ") = ");
         System.out.println(myPolynomial.add(myPolynomial2).toString());
 
-        System.out.print("\n" + myPolynomial.toString() + "__+__" + myPolynomial3.toString() + " = ");
+        System.out.print("\n(" + myPolynomial.toString() + ") + (" + myPolynomial3.toString() + ") = ");
         System.out.println(myPolynomial.add(myPolynomial3).toString());
 
-        System.out.print("\n" + myPolynomial.toString() + "__+__" + myPolynomial4.toString() + " = ");
+        System.out.print("\n(" + myPolynomial.toString() + ") + (" + myPolynomial4.toString() + ") = ");
         System.out.println(myPolynomial.add(myPolynomial4).toString());
 
 //Result:
@@ -120,9 +120,11 @@ public class Main {
 
 //-------------------------------------test MULTY--------------------------------------------------------------------
 
-        System.out.println("---------multiply---------");
-        System.out.print("\n(" + myPolynomial.toString() + ") * (" + myPolynomial1.toString() + ") = ");
+        System.out.println("\n---------multiply---------");
+        System.out.print("\n(" + myPolynomial.toString() + ") * (" + myPolynomial2.toString() + ") = ");
         System.out.println(myPolynomial.multiply(myPolynomial2).toString());
+
+
 
     }
 }

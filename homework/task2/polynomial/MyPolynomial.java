@@ -17,6 +17,8 @@ public class MyPolynomial {
     public String toString() {
         if (coeffs.length == 0) {
             return "Not exist";
+        } else if (coeffs.length == 1 && coeffs[0] == 0) {
+            return "0";
         }
 
         StringBuilder str = new StringBuilder();
@@ -56,7 +58,7 @@ public class MyPolynomial {
         System.arraycopy((lenThis >= lenRight) ? this.coeffs : right.coeffs, 0, newCoeffs, 0, max);
 
         for (int i = 0; i < Math.min(lenRight, lenThis); i++) {
-            newCoeffs[i] = newCoeffs[i] + right.coeffs[i];
+            newCoeffs[i] += right.coeffs[i];
         }
 
         return new MyPolynomial(newCoeffs);
@@ -68,21 +70,23 @@ public class MyPolynomial {
 
         if (lenRight == 0 || (right.getDegree() == 0 && right.coeffs[0] == 0) ||
                 lenThis == 0 || (this.getDegree() == 0 && this.coeffs[0] == 0)) {
-            return new MyPolynomial(new double[0]);
+            return new MyPolynomial(new double[] {0});
         }
 
         if (lenRight == 1 && right.coeffs[0] == 1) {
             return this;
-        } //если полином умножается на 1, то нечего цикл гнать
+        } //если полином умножается на 1 или 0,
+        // то нечего цикл гнать - экономим чуть-чуть по памяти и времени
+        if (lenThis == 1 && coeffs[0] == 1) {
+            return right;
+        }
 
-//        int min = Math.min(lenRight, lenThis);
-//        int max = Math.max(lenRight, lenThis);
-        double[][] newCoeffs = new double[lenThis][lenRight + lenThis];
+        double[][] newCoeffs = new double[lenThis][lenRight + lenThis - 1];
         MyPolynomial[] multResult = new MyPolynomial[lenThis];
 
-        for (int i = lenThis - 1; i > 0; i--) {
-            for (int j = lenRight - 1; j > 0; j--) {
-                newCoeffs[i][j + i] = coeffs[i] * right.coeffs[j];
+        for (int i = lenThis - 1; i >= 0; i--) {
+            for (int j = lenRight - 1; j >= 0; j--) {
+                newCoeffs[i][i + j] = coeffs[i] * right.coeffs[j];
             }
             multResult[i] = new MyPolynomial(newCoeffs[i]);
         }
@@ -90,7 +94,7 @@ public class MyPolynomial {
         MyPolynomial returnPoly = new MyPolynomial(multResult[0].coeffs);
 
         for (int i = 0; i < newCoeffs.length - 1; i++) {
-            returnPoly.add(multResult[i + 1]);
+            returnPoly = new MyPolynomial(returnPoly.add(multResult[i + 1]).coeffs);
         }
 
         return returnPoly;
