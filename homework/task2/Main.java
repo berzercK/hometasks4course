@@ -1,6 +1,7 @@
 package education.homework.task2;
 
 import education.homework.task2.complex.MyComplex;
+import education.homework.task2.polynomial.MyPolynomial;
 
 public class Main {
     public static void main(String[] args) {
@@ -59,8 +60,69 @@ public class Main {
 
         System.out.println(mC3.conjugate().toString());
 
-//-------------------------------------MyPolynomial--------------------------------------------
+        System.out.print("---------------------------------------MyPolynomial--------------------------------------------");
+        double[] coeffs = new double[]{4, -3, 0, 9, 6};
 
+        MyPolynomial myPolynomial = new MyPolynomial(coeffs);
+        System.out.println("\nmyPolynomial is = " + myPolynomial.toString()); // --> myPolynomial is = 6.0x^4+9.0x^3+8.0x^2-3.0x+4.0
+        System.out.println("His degree is = " + myPolynomial.getDegree());    // --> His degree is = 4
+
+        double[] c1 = new double[]{1};
+        MyPolynomial myPolynomial1 = new MyPolynomial(c1);
+        System.out.println("\nmyPolynomial is = " + myPolynomial1.toString()); // --> myPolynomial is = 1.0
+        System.out.println("His degree is = " + myPolynomial1.getDegree());    // --> His degree is = 0
+
+        double[] c2 = new double[]{5, -5, -7};
+        MyPolynomial myPolynomial2 = new MyPolynomial(c2);
+        System.out.println("\nmyPolynomial is = " + myPolynomial2.toString()); // --> myPolynomial is = -7.0x-5.0
+        System.out.println("His degree is = " + myPolynomial2.getDegree());    // --> His degree is = 1
+
+        double[] c3 = new double[]{};
+        MyPolynomial myPolynomial3 = new MyPolynomial(c3);
+        System.out.println("\nmyPolynomial is = " + myPolynomial3.toString()); // --> myPolynomial is = Not exist
+        System.out.println("His degree is = " + myPolynomial3.getDegree());    // --> His degree is = -1000
+
+        double[] c4 = new double[]{0};
+        MyPolynomial myPolynomial4 = new MyPolynomial(c4);
+        System.out.println("\nmyPolynomial is = " + myPolynomial4.toString()); // --> myPolynomial is = 0.0
+        System.out.println("His degree is = " + myPolynomial4.getDegree());    // --> His degree is = 0
+
+//-------------------------------------test ADDING--------------------------------------------------------------------
+        System.out.println("---------add---------");
+        System.out.print("\n" + myPolynomial.toString() + "__+__" + myPolynomial1.toString() + " = ");
+        System.out.println(myPolynomial.add(myPolynomial1).toString());
+
+        System.out.print("\n" + myPolynomial.toString() + "__+__" + myPolynomial2.toString() + " = ");
+        System.out.println(myPolynomial.add(myPolynomial2).toString());
+
+        System.out.print("\n" + myPolynomial.toString() + "__+__" + myPolynomial3.toString() + " = ");
+        System.out.println(myPolynomial.add(myPolynomial3).toString());
+
+        System.out.print("\n" + myPolynomial.toString() + "__+__" + myPolynomial4.toString() + " = ");
+        System.out.println(myPolynomial.add(myPolynomial4).toString());
+
+//Result:
+/*
+        6.0x^4+9.0x^3+8.0x^2-3.0x+4.0__+__1.0 = 6.0x^4+9.0x^3+8.0x^2-3.0x+5.0
+
+        6.0x^4+9.0x^3+8.0x^2-3.0x+4.0__+__-7.0x-5.0 = 6.0x^4+9.0x^3+8.0x^2-10.0x-1.0
+
+        6.0x^4+9.0x^3+8.0x^2-3.0x+4.0__+__Not exist = 6.0x^4+9.0x^3+8.0x^2-3.0x+4.0
+
+        6.0x^4+9.0x^3+8.0x^2-3.0x+4.0__+__0.0 = 6.0x^4+9.0x^3+8.0x^2-3.0x+4.0*/
+
+// test successfull
+//
+//        Если один из слагаемых полинома = 0
+//        6.0x^4+9.0x^3-3.0x+4.0__+__1.0 = 6.0x^4+9.0x^3-3.0x+5.0
+//
+//        6.0x^4+9.0x^3-3.0x+4.0__+__-7.0x^2-5.0x+5.0 = 6.0x^4+9.0x^3-7.0x^2-8.0x+9.0
+
+//-------------------------------------test MULTY--------------------------------------------------------------------
+
+        System.out.println("---------multiply---------");
+        System.out.print("\n(" + myPolynomial.toString() + ") * (" + myPolynomial1.toString() + ") = ");
+        System.out.println(myPolynomial.multiply(myPolynomial2).toString());
 
     }
 }

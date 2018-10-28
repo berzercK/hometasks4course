@@ -10,13 +10,15 @@ public class Book {
 
     public Book(String name, Author[] authors, double price) {
         this.name = name;
-        this.authors = authors;
+        this.authors = new Author[authors.length];
+        System.arraycopy(authors, 0, this.authors, 0, authors.length);
         this.price = price;
     }
 
     public Book(String name, Author[] authors, double price, int qty) {
         this.name = name;
-        this.authors = authors;
+        this.authors = new Author[authors.length];
+        System.arraycopy(authors, 0, this.authors, 0, authors.length);
         this.price = price;
         this.qty = qty;
     }
