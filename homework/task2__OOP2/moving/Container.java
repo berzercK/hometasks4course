@@ -29,7 +29,6 @@ public class Container {
 /*
         return (ball.getX() + ball.getRadius() > x2) || (ball.getX() - ball.getRadius() < x1) ||
                 (ball.getY() + ball.getRadius() > y2) || (ball.getX() - ball.getRadius() < y1) ? false : true;
-
         return (!(ball.getX() + ball.getRadius() > x2)) && (!(ball.getX() - ball.getRadius() < x1)) &&
                 (!(ball.getY() + ball.getRadius() > y2)) && (!(ball.getX() - ball.getRadius() < y1));
     }*/
