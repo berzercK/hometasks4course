@@ -38,6 +38,16 @@ public class MyPolynomial {
         return str.toString();
     }
 
+    public double evaluate(double x) {
+        double value = 0.0;
+
+        for (int i = 0; i < coeffs.length; i++) {
+            value += coeffs[i] * Math.pow(x, i);
+        }
+
+        return value;
+    }
+
     public MyPolynomial add(MyPolynomial right) {
         int lenThis = this.coeffs.length;
         int lenRight = right.coeffs.length;
