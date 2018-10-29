@@ -1,4 +1,4 @@
-package education.homework.task1.figure;
+package education.homework.task1_OOP.figure;
 
 /*
  * Здесь нужно реализовать логику метода getArea() для вычисления площади круга.

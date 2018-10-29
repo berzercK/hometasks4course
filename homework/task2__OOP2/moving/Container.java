@@ -1,4 +1,4 @@
-package education.homework.task2.moving;
+package education.homework.task2__OOP2.moving;
 
 public class Container {
     private int x1;

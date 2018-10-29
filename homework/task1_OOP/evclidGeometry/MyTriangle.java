@@ -1,4 +1,4 @@
-package education.homework.task1.evclidGeometry;
+package education.homework.task1_OOP.evclidGeometry;
 
 public class MyTriangle {
     private MyPoint v1;

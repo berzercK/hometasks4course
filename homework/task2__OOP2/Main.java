@@ -1,7 +1,7 @@
-package education.homework.task2;
+package education.homework.task2__OOP2;
 
-import education.homework.task2.complex.MyComplex;
-import education.homework.task2.polynomial.MyPolynomial;
+import education.homework.task2__OOP2.complex.MyComplex;
+import education.homework.task2__OOP2.polynomial.MyPolynomial;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package education.homework.task2.polynomial;
+package education.homework.task2__OOP2.polynomial;
 
 public class MyPolynomial {
     private double[] coeffs;

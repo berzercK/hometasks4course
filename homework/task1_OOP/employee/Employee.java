@@ -1,4 +1,4 @@
-package education.homework.task1.employee;
+package education.homework.task1_OOP.employee;
 
 public class Employee {
     private int id;

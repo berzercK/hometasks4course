@@ -1,4 +1,4 @@
-package education.homework.task2.complex;
+package education.homework.task2__OOP2.complex;
 
 public class MyComplex {
     private double real;

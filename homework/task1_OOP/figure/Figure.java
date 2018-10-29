@@ -1,4 +1,4 @@
-package education.homework.task1.figure;
+package education.homework.task1_OOP.figure;
 
 //Конкретно в данной задаче не сказано про создание класса родителя, но всё же, так более системно, на мой взгляд
 

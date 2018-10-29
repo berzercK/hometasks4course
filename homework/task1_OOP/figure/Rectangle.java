@@ -1,4 +1,4 @@
-package education.homework.task1.figure;
+package education.homework.task1_OOP.figure;
 
 public class Rectangle extends Figure {
     private float lenght = 1.0f;

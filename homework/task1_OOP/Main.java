@@ -1,11 +1,11 @@
-package education.homework.task1;
+package education.homework.task1_OOP;
 
-import education.homework.task1.book.Author;
-import education.homework.task1.book.Book;
-import education.homework.task1.employee.Employee;
-import education.homework.task1.evclidGeometry.MyTriangle;
-import education.homework.task1.figure.Circle;
-import education.homework.task1.figure.Rectangle;
+import education.homework.task1_OOP.book.Author;
+import education.homework.task1_OOP.book.Book;
+import education.homework.task1_OOP.employee.Employee;
+import education.homework.task1_OOP.evclidGeometry.MyTriangle;
+import education.homework.task1_OOP.figure.Circle;
+import education.homework.task1_OOP.figure.Rectangle;
 
 public class Main {
     public static void main(String[] args) {

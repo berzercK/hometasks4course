@@ -1,4 +1,4 @@
-package education.homework.task1.evclidGeometry;
+package education.homework.task1_OOP.evclidGeometry;
 
 /*
  * В данном задании вспоминаем формулу вычисления расстояния между двумя точками на плоскости.
