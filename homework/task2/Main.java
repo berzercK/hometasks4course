@@ -124,7 +124,5 @@ public class Main {
         System.out.print("\n(" + myPolynomial.toString() + ") * (" + myPolynomial2.toString() + ") = ");
         System.out.println(myPolynomial.multiply(myPolynomial2).toString());
 
-
-
     }
 }

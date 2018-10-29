@@ -13,7 +13,7 @@ public class Container {
         y2 = y + height;
     }
 
-    public boolean collidesWidth(Ball ball) {
+    public boolean collides(Ball ball) {
 
         return (!(ball.getX() + ball.getRadius() > x2)) && (!(ball.getX() - ball.getRadius() < x1)) &&
                 (!(ball.getY() + ball.getRadius() > y2)) && (!(ball.getX() - ball.getRadius() < y1));
