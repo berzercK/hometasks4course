@@ -84,7 +84,6 @@ public class MyComplex {
 
     public MyComplex multiply(MyComplex right) {
         right.setValue(right.real * this.real, right.imag * this.imag);
-
         return right;
     }
 
@@ -96,6 +95,5 @@ public class MyComplex {
     public MyComplex conjugate() {
         return new MyComplex(real, -imag);
     }//Метод conjugate() возвращает объект MyComplex комлексного числа, сопряжённого с текущим (т.е. c this)
-
 
 }

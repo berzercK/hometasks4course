@@ -1,11 +1,11 @@
 package education.homework.task1_OOP.figure;
 
-/*
- * Здесь нужно реализовать логику метода getArea() для вычисления площади круга.
- * В качестве числа pi использовать статическую переменную класса Math.PI
- */
+        /*
+         * Здесь нужно реализовать логику метода getArea() для вычисления площади круга.
+         * В качестве числа pi использовать статическую переменную класса Math.PI
+         */
 
-public class Circle extends Figure{
+public class Circle extends Figure {
     private double radius = 1.0;
     private String color = "red";
 

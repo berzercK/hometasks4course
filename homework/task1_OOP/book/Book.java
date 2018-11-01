@@ -6,7 +6,7 @@ public class Book {
     private String name;
     private Author[] authors;
     private double price;
-    private int qty; //default = 0
+    private int qty;
 
     public Book(String name, Author[] authors, double price) {
         this.name = name;

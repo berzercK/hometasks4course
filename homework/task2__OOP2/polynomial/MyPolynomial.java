@@ -6,7 +6,6 @@ public class MyPolynomial {
     public MyPolynomial(double[] coeffs) {
         this.coeffs = new double[coeffs.length];
         System.arraycopy(coeffs, 0, this.coeffs, 0, coeffs.length);
-
     }
 
     public int getDegree() {
