@@ -1,5 +1,7 @@
 package education.homework.task2__OOP2.polynomial;
 
+import java.util.Arrays;
+
 public class MyPolynomial {
     private double[] coeffs;
 
@@ -107,6 +109,23 @@ public class MyPolynomial {
         }
 
         return returnPoly;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || !(o instanceof MyPolynomial)) return false;
+
+        MyPolynomial myPolynomial = (MyPolynomial) o;
+        return Arrays.equals(myPolynomial.coeffs, coeffs);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+
+        result = 31 * result + Arrays.hashCode(coeffs);
+        return result;
     }
 
 }

@@ -73,4 +73,26 @@ public class Book {
         }
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || !(o instanceof Book)) return false;
+
+        Book book = (Book) o;
+        return book.qty == qty && book.price == price &&
+                 book.name.equals(name) && Arrays.equals(book.authors, authors);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        long bits = Double.doubleToLongBits(price);
+
+        result = 31 * result + qty;
+        result = 31 * result + (int) (bits ^ (bits >>> 32));
+        result = 31 * result + name.hashCode();
+        result = 31 * result + Arrays.hashCode(authors);
+        return result;
+    }
+
 }

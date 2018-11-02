@@ -50,4 +50,23 @@ public class Circle extends Figure {
         return Math.PI * Math.pow(radius, 2);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || !(o instanceof Circle)) return false;
+
+        Circle circle = (Circle) o;
+        return circle.radius == radius && circle.color.equals(color);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        long bits = Double.doubleToLongBits(radius);
+
+        result = 31 * result + (int) (bits ^ (bits >>> 32));
+        result = 31 * result + color.hashCode();
+        return result;
+    }
+
 }

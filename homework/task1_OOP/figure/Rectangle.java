@@ -45,4 +45,21 @@ public class Rectangle extends Figure {
                 ']';
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || !(o instanceof Rectangle)) return false;
+
+        Rectangle rectangle = (Rectangle) o;
+        return rectangle.lenght == lenght && rectangle.width == width;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+
+        result = 31 * result + Float.floatToIntBits(lenght);
+        result = 31 * result + Float.floatToIntBits(width);
+        return result;
+    }
 }

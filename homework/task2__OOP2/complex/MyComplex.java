@@ -96,4 +96,24 @@ public class MyComplex {
         return new MyComplex(real, -imag);
     }//Метод conjugate() возвращает объект MyComplex комлексного числа, сопряжённого с текущим (т.е. c this)
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || !(o instanceof MyComplex)) return false;
+
+        MyComplex myComplex = (MyComplex) o;
+        return myComplex.imag == imag && myComplex.real == real;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        long bitsReal = Double.doubleToLongBits(real);
+        long bitsImag = Double.doubleToLongBits(imag);
+
+        result = 31 * result + (int) (bitsReal ^ (bitsReal >>> 32));
+        result = 31 * result + (int) (bitsImag ^ (bitsImag >>> 32));
+        return result;
+    }
+
 }
