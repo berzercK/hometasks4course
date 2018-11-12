@@ -1,4 +1,4 @@
-package education.homework.task2__OOP2.polynomial;
+package education.homework.task2_OOP2.polynomial;
 
 import java.util.Arrays;
 
@@ -114,7 +114,7 @@ public class MyPolynomial {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || !(o instanceof MyPolynomial)) return false;
+        if (!(o instanceof MyPolynomial)) return false;
 
         MyPolynomial myPolynomial = (MyPolynomial) o;
         return Arrays.equals(myPolynomial.coeffs, coeffs);

@@ -1,4 +1,4 @@
-package education.homework.task2__OOP2.complex;
+package education.homework.task2_OOP2.complex;
 
 public class MyComplex {
     private double real;
@@ -99,7 +99,7 @@ public class MyComplex {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || !(o instanceof MyComplex)) return false;
+        if (!(o instanceof MyComplex)) return false;
 
         MyComplex myComplex = (MyComplex) o;
         return myComplex.imag == imag && myComplex.real == real;

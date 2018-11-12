@@ -1,4 +1,4 @@
-package education.homework.task2__OOP2.moving;
+package education.homework.task2_OOP2.moving;
 
 public class Ball {
     private float x;
@@ -77,7 +77,7 @@ public class Ball {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || !(o instanceof Ball)) return false;
+        if (!(o instanceof Ball)) return false;
 
         Ball ball = (Ball) o;
         return ball.x == x && ball.y == y && ball.xDelta == xDelta && ball.yDelta == yDelta && ball.radius == radius;
