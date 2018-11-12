@@ -27,7 +27,7 @@ public class Author {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Author)) return false;
+        if (o == null || !(o instanceof Author)) return false;
 
         Author author = (Author) o;
         return author.name.equals(name) && author.email.equals(email) && author.gender == gender;

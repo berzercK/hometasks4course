@@ -57,7 +57,7 @@ public class Employee {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Employee)) return false;
+        if (o == null || !(o instanceof Employee)) return false;
 
         Employee employee = (Employee) o;
         return employee.id == id && employee.salary == salary &&

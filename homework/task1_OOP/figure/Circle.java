@@ -53,7 +53,7 @@ public class Circle extends Figure {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Circle)) return false;
+        if (o == null || !(o instanceof Circle)) return false;
 
         Circle circle = (Circle) o;
         return circle.radius == radius && circle.color.equals(color);

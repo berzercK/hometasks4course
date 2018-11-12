@@ -28,7 +28,7 @@ public class Container {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Container)) return false;
+        if (o == null || !(o instanceof Container)) return false;
 
         Container container = (Container) o;
         return container.x1 == x1 && container.x2 == x2 && container.y1 == y1 && container.y2 == y2;

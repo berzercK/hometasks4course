@@ -77,7 +77,7 @@ public class Ball {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Ball)) return false;
+        if (o == null || !(o instanceof Ball)) return false;
 
         Ball ball = (Ball) o;
         return ball.x == x && ball.y == y && ball.xDelta == xDelta && ball.yDelta == yDelta && ball.radius == radius;

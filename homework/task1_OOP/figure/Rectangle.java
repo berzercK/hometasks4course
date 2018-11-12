@@ -48,7 +48,7 @@ public class Rectangle extends Figure {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Rectangle)) return false;
+        if (o == null || !(o instanceof Rectangle)) return false;
 
         Rectangle rectangle = (Rectangle) o;
         return rectangle.lenght == lenght && rectangle.width == width;
