@@ -99,7 +99,7 @@ public class MyComplex {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || !(o instanceof MyComplex)) return false;
+        if (!(o instanceof MyComplex)) return false;
 
         MyComplex myComplex = (MyComplex) o;
         return myComplex.imag == imag && myComplex.real == real;

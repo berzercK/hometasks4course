@@ -56,7 +56,7 @@ public class MyTriangle {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || !(o instanceof MyTriangle)) return false;
+        if (!(o instanceof MyTriangle)) return false;
 
         MyTriangle myTriangle = (MyTriangle) o;
         return myTriangle.v1.equals(v1) && myTriangle.v2.equals(v2) && myTriangle.v3.equals(v3);

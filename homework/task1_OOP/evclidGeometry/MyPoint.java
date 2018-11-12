@@ -65,7 +65,7 @@ public class MyPoint {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || !(o instanceof MyPoint)) return false;
+        if (!(o instanceof MyPoint)) return false;
 
         MyPoint myPoint = (MyPoint) o;
         return myPoint.x == x && myPoint.y == y;
