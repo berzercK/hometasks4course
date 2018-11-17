@@ -15,7 +15,6 @@ public class LoopsMain {
         drowVariantG(SIZE);
         drowVariantH(SIZE);
         drowVariantI(SIZE);
-
     }
 
     private static void spacePrint() {
