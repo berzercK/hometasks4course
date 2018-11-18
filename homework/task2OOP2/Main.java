@@ -101,7 +101,7 @@ public class Main {
         System.out.print("\n(" + myPolynomial.toString() + ") + (" + myPolynomial4.toString() + ") = ");
         System.out.println(myPolynomial.add(myPolynomial4).toString());
 
-//Result:
+//Result.txt:
 /*
         6.0x^4+9.0x^3+8.0x^2-3.0x+4.0__+__1.0 = 6.0x^4+9.0x^3+8.0x^2-3.0x+5.0
 
