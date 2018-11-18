@@ -1,7 +1,9 @@
 package education.homework.task3structures.arrays.multDim;
 
 import static education.homework.task3structures.arrays.multDim.Methods.*;
+import static education.homework.task3structures.arrays.oneDim.Methods.*;
 import static education.homework.task3structures.nestedloops.LoopsMain.nextLine;
+import static java.lang.Math.abs;
 
 public class Task5 {
 
@@ -53,8 +55,9 @@ public class Task5 {
         }
 
         nextLine();
+        nextLine();
 
-        /*int[] colOfMax = new int[arr.length]; //столбец из максимальных чисел для каждой строки
+        /* int[] colOfMax = new int[arr.length]; //столбец из максимальных чисел для каждой строки
         int[][] indexColOfMax = new int[arr.length][2]; //столбец из максимальных чисел для каждой строки
         int[] indexOfMax = new int[2];
         for (int i = 0, j = 0; i < arr.length; i++, j = 0) {
@@ -84,22 +87,73 @@ public class Task5 {
 
         System.out.println("Maximum --> " + max);
 
-        System.out.println("Indexes --> [" + indexOfMax[0] + ", " + indexOfMax[1] + "]");*/
+        System.out.println("Indexes --> [" + indexOfMax[0] + ", " + indexOfMax[1] + "]"); */
     }
 
     static void taskC(int row, int col, int from, int to) {
         System.out.println("\t\tTask \"c\"");
         int[][] arr = initRandArray(row, col, from, to);
+
+//        arr[0] = new int[]{10, 20, 15, 4, 5};
+//        arr[3] = new int[]{10, 20, 15, 4, 5};
+
+//        arr[7] = new int[]{3, 8, -10, -7, 4};
+//        arr[2] = new int[]{10, -3, 8, -7, -4};
         printArray(arr);
 
-        /*
-        Cоздать двумерный массив из 8 строк и 5 столбцов из случайных целых чисел в отрезке [-10;10].
-        Вывести массив на экран.
-        Определить и вывести  на экран индекс строки с наибольшим по модулю произведением элементов.
-         */
+        int[] multOfColumn = new int[arr.length];
+        int[] indexRow = new int[multOfColumn.length];
+        fillArray(multOfColumn, 1);
+        fillArray(indexRow, -1);
 
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                multOfColumn[i] *= arr[i][j];
+            }
+        }
 
+        int max = abs(multOfColumn[0]);
+        indexRow[0] = 0;
+        int q = 0;
+        //ищем максимальный по модулю эелмент
+        for (int i = 1; i < multOfColumn.length; i++) {
+            if (max < abs(multOfColumn[i])) {
+                q = 0;
+                fillArray(indexRow, -1);
+                indexRow[q++] = i;
+                max = abs(multOfColumn[i]);
+            } else if (max == abs(multOfColumn[i])) {
+                indexRow[q] = i;
+                q++;
+            }
+        }
 
+        System.out.println("Multiply of each row: ");
+        printArray(multOfColumn);
+
+        System.out.println("Maximum --> " + max);
+        System.out.print("Indexes --> ");
+        int i = 0;
+        while (indexRow[i] != -1) {
+            System.out.print("[" + indexRow[i++] + "] ");
+        }
+
+        nextLine();
+        nextLine();
     }
 
+
+    public static void taskD(int row, int col, int from, int to) {
+        System.out.println("\t\tTask \"d\"");
+        int[][] arr = initRandArray(row, col, from, to);
+        printArray(arr);
+
+        Integer[][] sortArray = new Integer[row][col];
+        for (int i = 0; i < arr.length; i++) {
+            sortArray[i] = reversSortArray(arr[i]);
+        }
+        System.out.println("Array sorted by each row:");
+        printArray(sortArray);
+
+    }
 }
