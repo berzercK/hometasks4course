@@ -12,7 +12,6 @@ public class ConstructionsMain {
     private static void start() {
         compareEnumSwitchVSIf();
         compareSwitchVSIf();
-
     }
 
     private static void compareEnumSwitchVSIf() {

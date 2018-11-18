@@ -86,7 +86,6 @@ public class Task5 {
         } //ищем максимальный элемент в Массиве
 
         System.out.println("Maximum --> " + max);
-
         System.out.println("Indexes --> [" + indexOfMax[0] + ", " + indexOfMax[1] + "]"); */
     }
 
@@ -154,6 +153,6 @@ public class Task5 {
         }
         System.out.println("Array sorted by each row:");
         printArray(sortArray);
-
+        nextLine();
     }
 }

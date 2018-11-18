@@ -13,6 +13,5 @@ public class Main {
         taskB(8, 5, -99, 99);
         taskC(8, 5, -10, 10);
         taskD(10, 7, 0, 100);
-
     }
 }

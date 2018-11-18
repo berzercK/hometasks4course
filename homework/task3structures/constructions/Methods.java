@@ -4,15 +4,15 @@ import static education.homework.task3structures.nestedloops.LoopsMain.nextLine;
 
 public class Methods {
 
-    private static void printTimesElseIf(int[] times) {
-        for (int i = 0; i < times.length; ++i) {
-            System.out.println("Уровень вложенности ->  " + i + "  inputs ->  " + times[i]);
-        }
-    }
-
     private static void printTimes(int[] times) {
         for (int i = 0; i < times.length; ++i) {
             System.out.println("Case ->  " + i + "  inputs ->  " + times[i]);
+        }
+    }
+
+    private static void printTimesElseIf(int[] times) {
+        for (int i = 0; i < times.length; ++i) {
+            System.out.println("Уровень вложенности ->  " + i + "  inputs ->  " + times[i]);
         }
     }
 

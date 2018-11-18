@@ -40,7 +40,6 @@ public class Methods {
                 integers[i][j] = arr[i][j];
             }
         }
-
         return integers;
     }
 
