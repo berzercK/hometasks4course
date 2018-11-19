@@ -5,7 +5,7 @@ import java.util.NoSuchElementException;
 import java.util.Spliterator;
 import java.util.function.Consumer;
 
-public class MyLinkedList<E> implements ILinkedList {
+public class MyLinkedList<E> implements ILinkedList<E> {
     private int size = 0;
     private Node<E> first;
     private Node<E> last;
@@ -52,14 +52,46 @@ public class MyLinkedList<E> implements ILinkedList {
 
 
     @Override
-    public void add(Object element) {
-
+    public boolean add(E element) {
+        linkLast(element);
+        return true;
     }
+
 
     @Override
-    public void add(int index, Object element) {
+    public void add(int index, E element) {
+        checkElementIndex(index);
 
+        if (index == size)
+            linkLast(element);
+        else
+            linkBefore(element, node(index));
     }
+
+    private void linkLast(E element) {
+        final Node<E> l = last;
+        final Node<E> newNode = new Node<>(element, l, null);
+        last = newNode;
+        if (l == null)
+            first = newNode;
+        else
+            l.nextNode = newNode;
+        size++;
+//        modCount++;
+    }
+
+    private void linkBefore(E element, Node<E> node) {
+        final Node<E> pred = node.prevNode;
+        final Node<E> newNode = new Node<>(element, pred, node);
+        node.prevNode = newNode;
+        if (pred == null)
+            first = newNode;
+        else
+            pred.nextNode = newNode;
+        size++;
+//        modCount++;
+    }
+
 
     public void clear() {
         for (Node<E> node = first; node != null; ) {
@@ -72,7 +104,7 @@ public class MyLinkedList<E> implements ILinkedList {
         first = null;
         last = null;
         size = 0;
-
+//      md++
     }
 
     private void checkElementIndex(int index) {
@@ -88,27 +120,78 @@ public class MyLinkedList<E> implements ILinkedList {
     }
 
     @Override
-    public int indexOf(Object element) {
-        return 0;
+    public int indexOf(E e) {
+        int index = 0;
+        if (e == null) {
+            for (Node<E> x = first; x != null; x = x.nextNode) {
+                if (x.element == null)
+                    return index;
+                index++;
+            }
+        } else {
+            for (Node<E> x = first; x != null; x = x.nextNode) {
+                if (e.equals(x.element))
+                    return index;
+                index++;
+            }
+        }
+        return -1;
     }
 
     @Override
     public E remove(int index) {
+        checkElementIndex(index);
+        return unlink(node(index));
+    }
 
-        return null;
+    private E unlink(Node<E> node) {
+        final E element = node.element;
+        final Node<E> next = node.nextNode;
+        final Node<E> prev = node.prevNode;
+
+        if (prev == null) {
+            first = next;
+        } else {
+            prev.nextNode = next;
+            node.prevNode = null;
+        }
+
+        if (next == null) {
+            last = prev;
+        } else {
+            next.prevNode = prev;
+            node.nextNode = null;
+        }
+
+        node.element = null;
+        size--;
+//        modCount++;
+        return element;
+    }
+
+/*    public void push(E e) {
+        addFirst(e);
+    }
+
+    public E pop() {
+        return removeFirst();
+    }*/
+
+    @Override
+    public E set(int index, E element) {
+        checkElementIndex(index);
+        Node<E> node = node(index);
+        E oldValue = node.element;
+        node.element = element;
+        return oldValue;
     }
 
     @Override
-    public E set(int index, Object element) {
-        return null;
-    }
-
-@Override
     public int size() {
         return size;
     }
 
-@Override
+    @Override
     public E[] toArray() {
 
 
@@ -138,13 +221,15 @@ public class MyLinkedList<E> implements ILinkedList {
         return null;
     }
 
+
+
     private static class Node<E> {
         private E element;
         private Node<E> nextNode;
         private Node<E> prevNode;
 
 
-        public Node(E element, Node<E> nextNode, Node<E> prevNode) {
+        Node(E element, Node<E> prevNode, Node<E> nextNode) {
             this.element = element;
             this.nextNode = nextNode;
             this.prevNode = prevNode;

@@ -2,7 +2,7 @@ package education.homework.task4CollectionsPart1;
 
 public interface ILinkedList<E> extends Iterable<E> {
 
-    void add(E element);
+    boolean add(E element);
 
     void add(int index, E element);
 
